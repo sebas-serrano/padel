@@ -1,0 +1,1157 @@
+{
+	"info": {
+		"_postman_id": "e5bee79b-508c-4823-91d4-8d8f4b73cf81",
+		"name": "Padel2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34048894"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/getUsers",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Firebase_uid",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/getUserByFirebaseId/fefef343g",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"getUserByFirebaseId",
+						"fefef343g"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By UserID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/getUserById/1",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"getUserById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Load User // E",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Robert Plant\",\r\n  \"email\": \"plant@zeppelin.com\",\r\n  \"firebase_uid\": \"ledz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/createLoadUser",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"createLoadUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Email",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/getUserByEmail/plant@zeppelin.com",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"getUserByEmail",
+						"plant@zeppelin.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Tickets",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{firebase_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2025-02-27\",\r\n  \"description\": \"compra 8 tickets\",\r\n  \"tickets\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/addTickets/nirvana1",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"addTickets",
+						"nirvana1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Tikcets",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2025-02-27\",\r\n  \"description\": \"consume 2 tickets\",\r\n  \"tickets\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/removeTickets/4",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"removeTickets",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Phone Number",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							" pm.sendRequest({\r",
+							"    url: 'https://securetoken.googleapis.com/v1/token?key=AIzaSyC27hfOn0woModAJM3q1Ma_esBbCeMndzI',\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'Content-Type': 'application/json'\r",
+							"    },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: 'refresh_token',\r",
+							"            refresh_token: \"AMf-vBwBUng1H0e0tdeXT6sWlkRSQn-3ZhRy0cd7K86CcXWl2TNLwP_bUoYYWyvkLeUijlBQjeThLendQQCINFmSv7k4fYCZSWmkIyeUPpNbcUG43wpNZsFy2h41fCM-oGW6mTvtLjRY8b31JjS0OO1GcDV3jmYG5UU4gzwHRQGXBU_YWXMwnTqIaDDRHAmLIxtcs3UXc7nSSCHuNsYPqnBzV1SxQ741eNNfgakK8pB1TBBFdUeUtvnwSKqhBMVuPkZCeBkHow-_15USDGZidElwTL-iQBLxktCHQax7FkI_i4hkgyzioidXbUdfiUA-_yl6AVohZEzY3paXU1QUX-caJudDQpsdgM_RJf3_5akiPcG1SI6_TK1zZTfBrC07NEyWRsTET06AxrtKHCZV8ctqhOsFCM4ZoG8qVWgKQBUGGiwJjKqHFjMY4Ner9hhsMGxuPMA-mc1KbFlta1K06FRaQbc1A4fgmJd14a1M1ZdzoaI7sQUOJGsdGcSHbMxrZrlbs780Sdg9v_X0aoqWID5ExvlKFS5CS1I3Ukha4at5UAd2R6OWgF_hT_6lgLPOZxkdXvk1EDq55lLN-7GMbtMw6v2On3su9WGRwSXLpSA_m_-Y0l6zjMopxvB0_XEec3-0eusd9D3DPPsWtIvCU4ApC4iIjHJ2690cUqjodIyLeGkYtM__Gs0pv-9XBibkp6m4NPUPMOanhN_BgdM136SKSCsyUD-RF6zrojTHcSbEb0COx4YJlH51Fqy77T9vyFK9utStqrLeKicQ0Nigvo2KDtVp0h-LE7RmHrh78sz-mzUZ_TR-vUbJb1RLeW-ifCDROb7k18lzNT11ba5FbrNX42M_smf9xlkqFdWRVs9q9V7g8ajsNTT_OnDHZs5dYAAqjTZy0Uqg4EdM-1hCa0I8ypEYI_OiwHREKP1QGZ-f8xFx70dgJZ887dztTIX5ntCjG9vgJVsrHzlkWF-1pBkD1FLnfh6PqPXb7tl_WbzwmfvPv8JM-OLwEovwFQ_TCzCw0GMERnCLJXYeAKiOyBwfCEL7G-9BOTPkUqWef-c9FSMwCAjAgFJGq915eDhHluf8PBxTW5b0zeIu7jqCgnEUfe3nbdQD9JC6qYNnKRLcC0xS6vq3V2PWSiMA2WaOaAjkTgmJ_kjQys9ZqenO3twS2UIIZoLPE5mIPxqA4G8KYIlhk0lKgdZeQah6A1nVNyo9mzkzlbu1rvM5HSU-WTlSP_XnRFhJsm59wI-HEBV6XQ68SDgnETwWlezMXlEeOhyGqjJqJtW2ThzmeKc_bhNGeFdGDCu0JYUncvfIuakza1JP-Kiq88wbJ-67edt3hvUi6b9VkrZdS6vf0zW_I0Ql3R7m0rcAVEFz5ItopTOVlwnTKgdArdsORNDIy5hmV8zook2x1fkNGYvDTywEmotj8TdQi98FB_YoApoSyynR53Ge1PxLUQacNdhm8zSxhtgUSSp7I8tnaQtpZsmh--kqwzFJkuvR0Yg-JjVzn0cTMXO2VzungBKMCMk4DA0ql3eNVo0-KsR9fzzU1bBInNbL5BhXV99mk8GrptY1L7ROw6z_882gpII2mYB2KMl285Eeg-R0mjk-7z0mYKISoMnyn9ZnXvF6RaEhmJpu6k4GXaH8DdrMps8McgL_Dduy-2hez4i3DzrFjeq7UgYmL09FUuIBXQTRyA\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let response = res.json();\r",
+							"        pm.environment.set('firebase_id_token', response.id_token);\r",
+							"        pm.environment.set('firebase_refresh_token', response.refresh_token);\r",
+							"    } else {\r",
+							"        console.log('Error al refrescar el token:', err);\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{firebase_id_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"099366355\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/user/addPhoneNumber/3",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"user",
+						"addPhoneNumber",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Packages",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/package/getPackages",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"package",
+						"getPackages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Package By ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/package/getPackageById/10",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"package",
+						"getPackageById",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Package",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 1000,\r\n  \"ticket_quantity\": 30,\r\n  \"title\": \"Paquete de 16\",\r\n  \"description\": \"30 tickets por 1000 pesos. Promo Invita Mancho \",\r\n  \"active\": true,\r\n  \"user_id\": 4,\r\n  \"firebase_uid\": \"ledz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/package/createPackage/",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"package",
+						"createPackage",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Package by ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/package/deletePackageByID/9",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"package",
+						"deletePackageByID",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Package by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 500,\r\n  \"ticket_quantity\": 8,\r\n  \"title\": \"Paquete de 8\",\r\n  \"description\": \"8 tickets por 3500 pesos. Oferta con codigo: ManchoInvita\",\r\n  \"active\": true,\r\n  \"user_id\": 0,\r\n  \"firebase_uid\": \"ledz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/package/updatePackageByID/10",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"package",
+						"updatePackageByID",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/transaction/getTransactions",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transaction",
+						"getTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction By ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/transaction/getTransactionById/1",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transaction",
+						"getTransactionById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions By User ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/transaction/getTransactionsByUserId/4",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transaction",
+						"getTransactionsByUserId",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2025-02-27\",\r\n  \"description\": \"Compra\",\r\n  \"tickets\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/transaction/createTransaction/1",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transaction",
+						"createTransaction",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Transaction By ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: `https://securetoken.googleapis.com/v1/token?key=AIzaSyAfvqFyVN6i0S08xMzEwsSJcDuW6Aa4rk4`,\r",
+							"    method: 'POST',\r",
+							"    header: { 'Content-Type': 'application/json' },\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({\r",
+							"            grant_type: \"refresh_token\",\r",
+							"            refresh_token: \"AMf-vBxlFAqRkoMzLIazgRr4spaLUO_mNkf3Xfel3tweHLp2uE2-eVh95OZVQ54yAM-qcn-FuUva12megjtTDcTygzM6WOZAGOAemVejjZcVNeblXNZZXYbBHoAoNiaBTTqoBOJE-DwlmU-bLk_dSvJMpq8Cpy2M_jqrP0FOATw3YUX0-jGM4l-OQQw-alMhmgpu-Dn6puBO5uXIm15Lupp0RhhmveBi881HE28n3KdHMmP9sMX7RfUU7U2Xj32qdAxZfx7NPWKHmuo9GQE2c8ZBoxd6Cw3dLnMq-IVA8UWaM_QrCFO3Y77C96oZ_rc9scOZfV79EILYGqEf3hcvr99zKwCjwd9T2L_ZocTqmtA5ly8adMe1yPzdY4PSMf_fqJdC1UuscjBGu-uSnKQA2LfFTvU0r_JiSipyjZUoz1EeywJgsjQAqXKE4tf19gBUPwdIZAzN90yq\"\r",
+							"        })\r",
+							"    }\r",
+							"}, function (err, res) {\r",
+							"    if (!err) {\r",
+							"        let token = res.json().id_token;\r",
+							"        pm.environment.set(\"firebase_token\", token);\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRjNjI2MmYzZTk3NzIzOWMwMDUzY2ViODY0Yjc3NDBmZjMxZmNkY2MiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x1Yml0dXphaW5nb3BhZGVsIiwiYXVkIjoiY2x1Yml0dXphaW5nb3BhZGVsIiwiYXV0aF90aW1lIjoxNzQwNzEzMDEzLCJ1c2VyX2lkIjoiVDlEaDZUMUdhSWROdGJMRWMzM0lFMTBJVEZDMyIsInN1YiI6IlQ5RGg2VDFHYUlkTnRiTEVjMzNJRTEwSVRGQzMiLCJpYXQiOjE3NDA3MTMwMTMsImV4cCI6MTc0MDcxNjYxMywiZW1haWwiOiJwcnVlYmFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbInBydWViYUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.TRvbVEqAxBZK4aWsoXw1VlTqsAgVvcZbcTjzbQBBlciXBZkQ6WDgehd_4LiEa66342USRwzStrqNxGbP0sfC8HyS0ApXxDa_Ry0aRtxs6tH1TNWfJ3yPUTTsFU3YKdhHGfmFtltIec8Y5dzUMxH26QukVOrfe7ZtgOb075h-UIeH6UJ-0W6G8HAy_l23iwhD2beiTvoDik1SzfB_MzgvliqCpZ2tBBJfJ4oBWgWy2ZyEr6W4O_YLDSJf4dcD8SU7lku7Jntu7_UhPats_lxALZ9mCLnd2qlQr6RHoCG61sr_5qnsqo20Bf1wX9HGuAU39CcJidx78nHhJR0vWAASKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://retopadelbackend.onrender.com/transaction/deleteTransactionById/3",
+					"protocol": "https",
+					"host": [
+						"retopadelbackend",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transaction",
+						"deleteTransactionById",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "service_account",
+  "project_id": "clubituzaingopadel",
+  "private_key_id": "be2034ce37ca6d4c133ed0e82b4a2d876921ff27",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDZLVAmzPd1WzKS\ncUxo59KqvsoeXCRQD4A2nMly6SVl+m4cCxpGUqQ6Zy+2CTFu4h3+K1JjLU/06M77\nVBmNJ3cRDB0yU59RjbJ5rJMwFj3nDhGZhB5WREVXyJMFnCf5Due8J/pc69xhCeRw\nVwA0LW+0Ws3tOe4fUiBdk9eVW/u3kAnZwsdDnWYsON31/qZdfSqCWDfDEtUEEc0/\nnXq0fo9ArdA8MvBcSHGBdyU/AutaHtFL5L39hgyOL/IMqUrlSBN6cNz1dUm08tqL\nW5rEhzDm0tq6YcU4jWk8wqMtFJ3QyL3HyLhp7ypKHoQDmmyxjBLAuaNNbG64AnB9\n1TtCNUtNAgMBAAECggEAAenFnFHkltgS009u3jhh7Ax6OKzpylAYpQ0vM8qcqw/7\nCwGIsw3kpyRkOzT229nfbG8dRAUQ1et8cfevse/4ZeIMGna6Hzx2/LNp0zFJolDG\nvuohtPOCWN+fdpva46AfUn0CVkc4TcffMfjSO6NwKc/oTdVbelMoOIAmP16WvRXi\nQV+cdGApGLwMxDNZ8J3hFr9Jmg8qMsz2uy++kmpUOf1DUEinBB26khzuNWtJfry5\noO5abR6j6ZPui9cLuY21KjHUzsbYoF9ufGyVxOyDX0eumbvF0psOsZsYSyFfNGeB\nFGq2mptBTWiAFtNiqcPZbfd+jmhS+H7UpRzCQIRkAQKBgQD7Hi13rQkWfz9fiocO\nzLle0tMFmbMiUr6QMxZijbTrp/hvD83Zt+nWwyOdpm60lco6hK9FumgcnKGRaRqJ\n39F/bnAYJlzoca4LZTfUm0MFOWctUyfxyapDfNoRfzy5kZ1+OsAu6YkIhr4ecMcz\nYWCIMMF33ikfNKKE4BdS8YfqQQKBgQDdZjXnieQQm+l02WHzOClSNPhUclh9M8QT\nAWERSBaCWMl+o9ZSmyvAD4uNphrnPIwAds95Fk1eZ966mypwWV9/ZbkU8iGDTxFJ\nmKhrCOtbESpma36aza8if9q4Ter1MiStjbdh5UPhnevaV++InkevmG2XYGM3gDYH\nbdJKe9jmDQKBgQCqE9dRneVw0kA20lkE4g2OtpVrzpyv24Dro14+46EslnhBqF+Q\nXOrIpSPjK40BTA5KsgEP5d+LuV4IYTozNV7rwv2yrZDxccUiPKyil4G98RH7db2x\nGhfyW4ZKoXWcbY5QpzPw0gUYvEHZ1iJkn0hFFViDefk6BGkqO6gwahvWwQKBgAFF\nLNn/OIe/3T8GYEF8+P+3vhT98vQE8AML5vqqZzaoO7+2QOyIZ1/atvpBEbZx6nu2\nMsqHDjqUbfq0GTI70QhyFPXBzd9q/LZnYc/7ZR5Iou2jgD5zH6YbBa45BDgT6ZH1\nVjABmLoapdfC2WT3Q4IGZdqQewE+gxDX2HUE8OGhAoGAfiVsKrMz1PCdyrnapHz0\n/L/kiq7HWRc1Ij3UmbOOHcKcWdnAGIZLCVeSCmydCw9p9AMy10KyQoFMRZEU9Y1F\neQnBm8T4aj1W9YMkY3LXjgyNtmjoQM139VEu2pv/ud4OvQQhM+Eo1ywgRz1R3S1e\naUFN+KFlWQkz9+4kEefwm3Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@clubituzaingopadel.iam.gserviceaccount.com",
+  "client_id": "103492420604602982369",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40clubituzaingopadel.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -7,6 +7,10 @@ from app.firebase.firebaseconfig import get_current_user
 from app.auth.auth import verify_admin
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
+from .config import settings
+from fastapi import FastAPI
+from app.dynatrace_client import enviar_metrica
+
 
 Base.metadata.create_all(bind=db_instance.engine)
 
@@ -89,14 +93,6 @@ async def verify_admin(current_user = Depends(verify_admin)):
 async def health_check():
     return {"status": "healthy"}
 
-
-from fastapi import FastAPI
-
-from app.dynatrace_client import enviar_metrica
-
-
-app = FastAPI()
-
 @app.get("/ping")
 async def ping():
     for i in range(3):
@@ -108,3 +104,10 @@ async def ping():
 async def obtener_usuarios():
     enviar_metrica("usuarios.consultados", 1, "count")
     return {"usuarios": ["Sebastián", "Carlos", "María"]}
+
+@app.get("/info")
+def obtener_info():
+    return {
+        "db_connection": settings.DB_MYSQL_PATH,
+        "admin_token": settings.ADMIN_TOKEN
+    }

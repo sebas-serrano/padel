@@ -97,7 +97,6 @@ async def health_check():
 async def ping():
     for i in range(3):
         enviar_metrica("app.requests", 1, "count")
-    print("salio del for")
     return {"message": "pong"}
 
 @app.get("/usuarios")

@@ -17,7 +17,6 @@ def enviar_metrica(nombre, valor, unidad="count"):
     """Envía una métrica personalizada a Dynatrace"""
 
     payload = f"{nombre},unit={unidad} {valor}"
-    
     response = requests.post(DYNATRACE_URL, headers=headers, data=payload)
 
     print(response.text)
